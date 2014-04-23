@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+			<title></title>
+			<meta name="description" content="">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<link rel="stylesheet" href="assets/css/vendor/normalize.min.css">
+			<link rel="stylesheet" href="assets/css/vendor/bootplus.min.css">
+			<link rel="stylesheet" href="assets/css/vendor/bootplus-responsive.min.css">
+			<link rel="stylesheet" href="assets/css/vendor/icon.css">
+			<link rel="stylesheet" href="assets/css/vendor/animation.css">
+			<link rel="stylesheet" href="assets/css/vendor/main.css">
+
+			<script src="assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		</head>
+		<body>
+			<!--[if lt IE 7]>
+				<link rel="stylesheet" href="assets/css/vendor/icon-ie7.css">
+				<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+			<![endif]-->
+			<!-- Fixed navbar -->
+			<script type="text/x-handlebars" data-template-name="application">
+				<div class="navbar navbar-fixed-top">
+					<div class="navbar-inner">
+						<div class="container">
+							<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+								<span class="icon-down-open"></span>
+							</button>
+							<a class="brand" href="#">ProyCalc</a>
+							<div class="nav-collapse collapse">
+								<ul class="nav">
+									<li><a href="#about">¿Cómo así?</a></li>
+									<li><a href="#contact">Contactanos, :)</a></li>
+								</ul>
+							</div><!--/.nav-collapse -->
+						</div>
+					</div>
+				</div>
+
+				<div>
+					{{outlet}}
+				</div>
+			</script>
+
+			<script type="text/x-handlebars" data-template-name="index">
+			<div class="hero-unit">
+				<div class="container">
+					<h1>Ordene ahora</h1>
+					<p>Este proyecto es para apoyar a que puedas configurar cuánto cobrar ante un proyecto nuevo, puedes configurara allá arriba y pues, ojalá y consigas el proyecto, :D.</p>
+					<p>
+						{{#link-to "calculator" classNames="btn btn-primary btn-large"}}
+							Empezar a calcular »
+						{{/link-to}}
+					</p>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+						<div class="alert alert-info">Proyectos destacados ({{productsCount}})</div>
+					</div>
+					{{#each product in products}}
+						<div class="span4">
+								<div class="card">
+									<h3 class="card-heading simple">{{title}}</h3>
+									<div class="card-body">
+											<p>
+												{{description}}
+											</p>
+										</div>
+									<div class="card-actions">
+											<button class="btn btn-block">Ver detalles</button>
+									</div>
+								</div>
+						</div>
+					{{/each}}
+				</div>
+
+				<footer>
+					<p>© Company 2013</p>
+				</footer>
+
+				</div>			
+			</script>
+
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+			<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+
+			<script src="assets/js/vendor/bootstrap.min.js"></script>
+			<script src="assets/js/vendor/handlebars-1.1.2.js"></script>
+			<script src="assets/js/vendor/ember-1.5.0.js"></script>
+			<script src="assets/js/vendor/ember-data.min.js"></script>
+			<!-- <script src="assets/vendor/js/ember-states.js"></script> -->
+			<script src="assets/js/vendor/plugins.js"></script>
+			<script src="assets/js/app/storage.js"></script>
+			<script src="assets/js/app/app.js"></script>
+
+
+			<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+			<script>
+					(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+					function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+					e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+					e.src="//www.google-analytics.com/analytics.js";
+					r.parentNode.insertBefore(e,r)}(window,document,"script","ga"));
+					ga("create","UA-XXXXX-X");ga("send","pageview");
+			</script>
+		</body>
+</html>
